@@ -1,0 +1,209 @@
+
+:root{
+  --bg: #ffe6b3;     
+  --card: #fff7e6;    
+  --ink: #4d3319;     
+  --brand: #86592d;   
+  --line: #e6ccb3;    
+  --sun: #f6d46b; 
+}
+
+html { box-sizing: border-box; }
+*, *::before, *::after { box-sizing: inherit; }
+
+body{
+  background-color: var(--bg);
+  padding: 0 60px;                 
+  font-family: sans-serif;         
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+h1{ 
+  color: #fff7e6; 
+  text-align: center; 
+  background: var(--brand); 
+  padding: 14px 18px; 
+  border-radius: 16px;
+  margin: 24px auto;
+}
+h2{ margin-top: 28px; font-size: 1.4rem; color: var(--ink); }
+p{ font-size: 1rem; }
+
+a:link, a:visited{ color: #4b2e83; text-decoration: underline; }
+a:hover{ text-decoration: none; }
+a:active{ color: #2a1850; }
+
+/* 让标题和导航更贴近，且标题更宽、导航更窄 */
+h1{
+  max-width: 1100px;        /* 标题条更宽 */
+  margin: 15px auto 10px;   /* 底部留小一点距离 */
+}
+
+/* 导航条容器：棕色底、比标题窄、圆角、居中 */
+#mainnav{
+  background: #ac7339;
+  border-radius: 18px;
+  padding: 10px 16px;
+  max-width: 500px;         /* 比 h1 更窄一点 */
+  margin: 0 auto 24px;      /* 居中；与下方留一点空间 */
+}
+
+/* 让三个按钮横排且居中 */
+#mainnav ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;  /* 水平居中 */
+  gap: 24px;                /* 三个按钮之间的间距 */
+}
+
+/* 单个按钮：黄色实心、圆角、深棕色文字 */
+#mainnav a{
+  display: inline-block;
+  padding: 8px 20px;
+  background: var(--sun);   /* 黄色实心 */
+  color: var(--ink);      /* 深棕色文字 */
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 16px;
+  line-height: 1;
+  border: 2px solid #e1b94a; /* 略深的黄边，更有质感（可去掉） */
+  transition: background-color .2s ease, transform .1s ease;
+}
+
+/* 悬停/按下的小交互（可选） */
+#mainnav a:hover{ background: #ffd96a; }
+#mainnav a:active{ transform: translateY(1px); }
+
+/* 整个导航条固定在右侧中间 */
+#pagenav {
+  position: fixed;        /* 固定位置 */
+  top: 30%;               /* 页面高度的中间 */
+  right: 20px;            /* 距离右边 20px */
+  transform: translateY(-50%); /* 精准垂直居中 */
+  background: #ac7339;    /* 浅米色背景 */
+  border: 1px solid #e6ccb3;
+  border-radius: 12px;
+  padding: 5px;
+  z-index: 999;           /* 保证浮在上层 */
+}
+
+/* 用 flex 垂直排列按钮 */
+#pagenav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;   /* 垂直方向 */
+  gap: 12px;                /* 间距 */
+}
+
+/* 按钮样式 */
+#pagenav a {
+  display: block;
+  padding: 5px 10px;
+  background: #f6d46b;      /* 黄色背景 */
+  color: #5a3a1f;           /* 深棕字 */
+  border: 2px solid #e1b94a;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  text-align: center;
+  transition: background-color .2s ease, transform .1s ease;
+}
+#pagenav a:active  { transform: translateY(1px); }
+
+/* 大卡片容器：米色背景 + 圆角 + 阴影 + 居中 */
+.content-box{
+  background: #fff7e6;            /* 浅米色 */
+  border: 2px solid #e6ccb3;      /* 淡棕描边 */
+  border-radius: 16px;
+  padding: 24px 28px;             /* 内边距 */
+  max-width: 960px;               /* 宽度上限 */
+  margin: 24px auto 24px;         /* 居中并与上下分隔 */
+  box-shadow: 0 6px 18px rgba(0,0,0,.08);
+}
+
+/* 让盒子里的标题和段落更舒服一点（可选） */
+.content-box h2{ margin-top: 20px; }
+.content-box p{ margin: 10px 0 18px; }
+
+/* 让图片在卡片内更融洽（可选） */
+.content-box img{
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid #e6ccb3;
+  padding: 6px;
+  background: #fffaf0;
+}
+
+.content-box h2 {
+  background: #ffdd66;      /* 明亮的黄色背景 */
+  color: #5c3317;           /* 深棕色文字 */
+  text-align: center;       /* 居中 */
+  padding: 5px 10px;       /* 内边距 */
+  border-radius: 12px;      /* 圆角 */
+  border: 2px solid #cc9933; /* 边框（深黄色/棕色调） */
+  margin: 20px auto 10px;   /* 上下外边距，让块有间隔 */
+  width: fit-content;       /* 框随文字宽度自适应 */
+  font-weight: bold;
+}
+
+main ul{                       
+  background: var(--card);
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+}
+main ul li{ color: var(--ink); }
+
+img{
+  display: block;
+  margin: 0 auto;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  padding: 6px;
+  background: #fffaf0;
+  max-width: 100%;
+  height: auto;}
+
+.content-card{
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 16px 20px;
+}
+.footer-text{ color: var(--ink); opacity: .9; }
+
+#hero{
+  background: var(--brand);
+  color: #fff7e6;
+  padding: 12px 16px;
+  border-radius: 14px;
+}
+
+footer p{ margin: 8px 0; }
+
+#page-footer {
+  background: var(--brand);       /* 棕色背景 */
+  color: #fff7e6;                 /* 米色文字 */
+  text-align: center;             /* 居中 */
+  padding: 16px 20px;
+  border-radius: 16px 16px 0 0;   /* 上边圆角，和标题呼应 */
+  margin-top: 40px;
+}
+
+/* 页脚链接：米色文字，悬停变亮 */
+#page-footer a {
+  color: #fff7e6;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#page-footer a:hover {
+  color: #ffd96a;   /* hover 时变成亮黄色 */
+}
